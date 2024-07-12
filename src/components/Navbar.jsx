@@ -5,8 +5,8 @@ import '.././App.css'
 const Navbar = () => {
   return (
     <div>
-        <nav className='text-center p-4 shadow-sm shadow-black-100 bg-white'>
-          Name in Navbar ?
+        <nav className='text-center p-4 shadow-sm shadow-black-100'>
+          BeautyGirl
         </nav>
         {/* form react router dom at in rounter.jsx*/}
         <Outlet/>
@@ -14,4 +14,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

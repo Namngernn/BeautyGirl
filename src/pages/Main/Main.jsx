@@ -1,12 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Pagination } from 'antd';
+const Main = () => <Pagination defaultCurrent={1} total={50} />;
 
-const Main = () => {
-  return (
-    <div className=''>
-      <div className="">test test</div>
-    </div>
-  )
-}
+
 
 export default Main
