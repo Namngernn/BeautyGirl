@@ -2,7 +2,7 @@ import React from 'react'
 // import { Outlet } from 'react-router-dom'
 
 import { EditOutlined, EllipsisOutlined, SettingOutlined, HeartOutlined, SearchOutlined } from '@ant-design/icons';
-import { Avatar, Card, Menu, Col, Row } from 'antd';
+import { Avatar, Card, Menu, Col, Row, Statistic } from 'antd';
 
 const { Meta } = Card;
 
@@ -57,6 +57,7 @@ const Home = () => {
       src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
       />
     }
+    
     actions={[
       <HeartOutlined key="heart" />,
     ]}
@@ -66,27 +67,13 @@ const Home = () => {
       title="Card title"
       description="This is the description"
       />
+      <Row gutter={16}>
+        <Col span={24}>
+          <Statistic value={1128} prefix={<HeartOutlined />} />
+        </Col>
+    </Row>
   </Card>
-  <Card
-    style={{
-      width: 180,
-    }}
-    cover={
-      <img
-      alt="example"
-      src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-      />
-    }
-    actions={[
-      <HeartOutlined key="heart" />,
-    ]}
-    >
-    <Meta
-      avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />}
-      title="Card title"
-      description="This is the description"
-      />
-  </Card>
+
 </div>
   </>
   )

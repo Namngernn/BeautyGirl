@@ -22,10 +22,7 @@ const getActiveColors = (colors) =>
 const Login = () => (
   <div className="min-h-screen flex flex-col justify-center items-center bg-pink-50">
     <div className="flex justify-start">
-      <Button
-        icon={<LeftOutlined className="text-gray-700" />}
-        className="border-none"
-      />
+    <Button icon={<LeftOutlined />}style={{ position: 'absolute', left: 20 }}/> 
     </div>
     <div className="relative bg-white p-8 rounded-lg shadow-md w-80">
       <h2 className="absolute inset-0 flex justify-center items-center text-center">Welcome Back!</h2>

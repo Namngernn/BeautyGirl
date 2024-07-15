@@ -1,8 +1,13 @@
 // import React from 'react'
 // import { Link } from 'react-router-dom'
 import React, { useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
-import { Image, Upload } from 'antd';
+import { PlusOutlined, LeftOutlined } from '@ant-design/icons';
+import { Image, Upload, Button, Input, Flex, Tag} from 'antd';
+
+// import { ArrowLeftIcon } from '@heroicons/react/solid'
+
+// tag category
+const tagsData = ['Beauty', 'Fashion', 'Skincare', 'Dining', 'Health'];
 
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
@@ -50,8 +55,24 @@ const Post = () => {
     </button>
   );
 
+// tag category
+  const [selectedTags, setSelectedTags] = React.useState(['Movies']);
+  const categoryChange = (tag, checked) => {
+    const nextSelectedTags = checked
+      ? [...selectedTags, tag]
+      : selectedTags.filter((t) => t !== tag);
+    console.log('You are interested in: ', nextSelectedTags);
+    setSelectedTags(nextSelectedTags);
+};
+
   return (
-    <>
+    <div>
+
+      <div>
+        <Button icon={<LeftOutlined />}style={{ position: 'absolute', left: 20 }}/> 
+      </div>
+
+
       <Upload
         action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
         listType="picture-card"
@@ -61,21 +82,41 @@ const Post = () => {
       >
         {fileList.length >= 8 ? null : uploadButton}
       </Upload>
-      {previewImage && (
-        <Image
-          wrapperStyle={{
-            display: 'none',
-          }}
-          preview={{
-            visible: previewOpen,
-            onVisibleChange: (visible) => setPreviewOpen(visible),
-            afterOpenChange: (visible) => !visible && setPreviewImage(''),
-          }}
-          src={previewImage}
+        {previewImage && (
+          <Image
+            wrapperStyle={{
+              display: 'none',
+            }}
+            preview={{
+              visible: previewOpen,
+              onVisibleChange: (visible) => setPreviewOpen(visible),
+              afterOpenChange: (visible) => !visible && setPreviewImage(''),
+            }}
+            src={previewImage}
         />
       )}
-    </>
-  );
-};
+{/* ใส่แคปชั่น */}
+    <Flex vertical gap={10}>
+      <Input size='large' placeholder="Add a catchy heading to get views" variant="borderless" />
+      <Input placeholder="Tap to add captions (try some ready ideas)" variant="borderless" />
+    </Flex>
+
+{/* category */}
+    <Flex gap={10} wrap align="center">
+      {/* <span>Categories:</span> */}
+      {tagsData.map((tag) => (
+        <Tag.CheckableTag
+          key={tag}
+          checked={selectedTags.includes(tag)}
+          onChange={(checked) => categoryChange(tag, checked)}
+        >
+          {tag}
+        </Tag.CheckableTag>
+      ))}
+    </Flex>
+
+    </div>
+  )
+}
 
 export default Post
