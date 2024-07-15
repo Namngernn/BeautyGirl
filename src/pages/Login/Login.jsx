@@ -4,6 +4,7 @@ import { FaFacebookF, FaGoogle, FaLinkedinIn } from 'react-icons/fa';
 import { LeftOutlined } from '@ant-design/icons';
 import { TinyColor } from '@ctrl/tinycolor';
 
+
 const colors1 = ['#F3D2C3', '#F2BFCB'];
 
 const onFinish = (values) => {
@@ -20,15 +21,18 @@ const getActiveColors = (colors) =>
   colors.map((color) => new TinyColor(color).darken(5).toString());
 
 const Login = () => (
-  <div className="min-h-screen flex flex-col justify-center items-center bg-pink-50">
-    <div className="flex justify-start">
-    <Button icon={<LeftOutlined />}style={{ position: 'absolute', left: 20 }}/> 
-    </div>
-    <div className="relative bg-white p-8 rounded-lg shadow-md w-80">
-      <h2 className="absolute inset-0 flex justify-center items-center text-center">Welcome Back!</h2>
+  <div>
+    <Button
+      icon={<LeftOutlined />}
+      style={{ position: 'absolute', left: 20, }} />
+
+    <div>
+      <div style={{ paddingTop: '20px' }}>
+        <h2 >Welcome Back!</h2>
+      </div>
       <div className="text-center mb-6">
-        <div className="text-gray-500">Beautygirl</div>
-        <div className="flex justify-center space-x-4 mt-2">
+      <div  style={{ paddingBottom: '10px', color: 'gray' }}>Beautygirl</div>
+        <div style={{ paddingbotttom: '20px' }}>
           <Button
             shape="circle"
             icon={<FaFacebookF fill="#F2CAAE" />}
@@ -43,7 +47,7 @@ const Login = () => (
           />
         </div>
       </div>
-      <Form
+      <Form style={{ paddingTop: '20px' }}
         name="basic"
         initialValues={{
           remember: true,
@@ -78,28 +82,29 @@ const Login = () => (
         </Form.Item>
 
         <Form.Item>
-          <ConfigProvider
-            theme={{
-              components: {
-                Button: {
-                  colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
-                  colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
-                  colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
-                  lineWidth: 0,
+            <ConfigProvider
+              theme={{
+                components: {
+                  Button: {
+                    colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
+                    colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
+                    colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
+                    lineWidth: 0,
+                  },
                 },
-              },
-            }}
-          >
-            <Button
-              type="primary"
-              htmlType="submit"
-              block
-              className="bg-gradient-to-r from-pink-400 to-orange-300 border-none rounded"
+              }}
             >
-              Sign In
-            </Button>
-          </ConfigProvider>
-        </Form.Item>
+              <Button
+                type="primary"
+                htmlType="submit"
+                block
+                className="bg-gradient-to-r from-pink-400 to-orange-300 border-none rounded"
+                style={{ borderRadius: '20px', height: '40px' }}
+              >
+                Sign In
+              </Button>
+            </ConfigProvider>
+          </Form.Item>
       </Form>
     </div>
   </div>
