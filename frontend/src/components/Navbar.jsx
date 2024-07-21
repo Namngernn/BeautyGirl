@@ -5,7 +5,7 @@ import '.././App.css'
 const Navbar = () => {
   return (
     <div>
-        <nav className='text-center p-4 shadow-sm shadow-black-100'>
+        <nav className='text-center p-4 shadow-sm shadow-black-100 bg-black'>
           BeautyGirl
         </nav>
         {/* form react router dom at in rounter.jsx*/}
