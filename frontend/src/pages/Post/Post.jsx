@@ -65,7 +65,8 @@ const Post = () => {
 
   return (
     <div style={{backgroundColor: '#fdf3f3'}} className='h-screen'>
-       <div>
+      {/* nav ด้านบน */}
+      <div>
         <nav className='p-4 shadow-sm shadow-black-100' style={{ backgroundColor: '#FFE6E6' }}>
           <Button type="text" icon={<LeftOutlined className="text-gray-600" />} /> 
           <span className="m-20 text-gray-600" >Post</span>
