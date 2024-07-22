@@ -67,23 +67,25 @@ const Post = () => {
 
   return (
     <div>
-
+      {/* bar ด้านบน */}
       <div>
-        <Button icon={<LeftOutlined />}style={{ position: 'absolute', left: 20 }}/> 
+        <nav className='text-center w-full h-50 fixed top-0 left-0 flex items-center justify-center' style={{backgroundColor: "#f6d5da"}}>Post</nav>
+        <Button icon={<LeftOutlined />} style={{ position: 'absolute', left: 20 }}/> 
       </div>
 
-
-      <Upload
-        action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
-        listType="picture-card"
-        fileList={fileList}
-        onPreview={handlePreview}
-        onChange={handleChange}
-      >
-        {fileList.length >= 8 ? null : uploadButton}
-      </Upload>
-        {previewImage && (
-          <Image
+      {/* โพสต์*/}
+      <div className='mt-10'>
+        <Upload
+          // action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
+          listType="picture-card"
+          fileList={fileList}
+          onPreview={handlePreview}
+          onChange={handleChange}
+          >
+          {fileList.length >= 8 ? null : uploadButton}
+        </Upload>
+          {previewImage && (
+            <Image
             wrapperStyle={{
               display: 'none',
             }}
@@ -93,27 +95,33 @@ const Post = () => {
               afterOpenChange: (visible) => !visible && setPreviewImage(''),
             }}
             src={previewImage}
-        />
-      )}
-{/* ใส่แคปชั่น */}
-    <Flex vertical gap={10}>
-      <Input size='large' placeholder="Add a catchy heading to get views" variant="borderless" />
-      <Input placeholder="Tap to add captions (try some ready ideas)" variant="borderless" />
-    </Flex>
+            />
+          )}
+      </div>
 
-{/* category */}
-    <Flex gap={10} wrap align="center">
-      {/* <span>Categories:</span> */}
-      {tagsData.map((tag) => (
-        <Tag.CheckableTag
-          key={tag}
-          checked={selectedTags.includes(tag)}
-          onChange={(checked) => categoryChange(tag, checked)}
-        >
-          {tag}
-        </Tag.CheckableTag>
-      ))}
-    </Flex>
+      {/*    ใส่แคปชั่น */}
+      <div>
+        <Flex vertical gap={10}>
+          <Input size='large' placeholder="Add a catchy heading to get views" variant="borderless" />
+          <Input placeholder="Tap to add captions (try some ready ideas)" variant="borderless" />
+        </Flex>
+      </div>
+        
+      {/*    category */}
+      <div>
+        <Flex gap={10} wrap align="center">
+          {/* <span>Categories:</span> */}
+          {tagsData.map((tag) => (
+            <Tag.CheckableTag
+            key={tag}
+            checked={selectedTags.includes(tag)}
+            onChange={(checked) => categoryChange(tag, checked)}
+            >
+              {tag}
+            </Tag.CheckableTag>
+          ))}
+        </Flex>
+      </div>
 
     </div>
   )
