@@ -21,55 +21,47 @@ const renderTitle = (title) => (
 const renderItem = (title, count) => ({
   value: title,
   label: (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-      }}
-    >
+    <div style={{display: 'flex',justifyContent: 'space-between',}} variant="borderless">
       {title}
-      <span>
+      <span variant="borderless">
         <UserOutlined /> {count}
       </span>
     </div>
   ),
 });
 
+// optionในช่องเสิร์ช
 const options = [
-  {
-    label: renderTitle('Libraries'),
-    options: [renderItem('AntDesign', 10000), renderItem('AntDesign UI', 10600)],
-  },
-  {
-    label: renderTitle('Solutions'),
-    options: [renderItem('AntDesign UI FAQ', 60100), renderItem('AntDesign FAQ', 30010)],
-  },
-  {
-    label: renderTitle('Articles'),
-    options: [renderItem('AntDesign design language', 100000)],
+  { options: [renderItem('Beauty', 10000), 
+              renderItem('Fashion', 10600), 
+              renderItem('Skincare', 10600), 
+              renderItem('Dining', 10600), 
+              renderItem('Health', 10600)],
   },
 ];
 
 const Search = () => {  
   return(
-    <div>
+    <div style={{backgroundColor: '#fdf3f3'}} className='h-screen'>
       {/* nav ด้านบน */}
       <div>
-        <nav className='p-4 shadow-sm shadow-black-100' style={{ backgroundColor: '#FFE6E6' }}>
-          <Button type="text" icon={<LeftOutlined className="text-gray-600" />} /> 
-          <span className="m-20 text-gray-600" >Search</span>
+        <nav className='p-4 flex items-center justify-between' style={{ backgroundColor: '#FFE6E6' }}>
+          <Button type="text" icon={<LeftOutlined className="text-gray-600" />} />
+          <div className="flex justify-center">
+            <span className="text-gray-600">Search</span>
+          </div>
+          <div className="w-10"></div>
         </nav>
       </div>
 
-      <AutoComplete
-        className='flex items-center'
+      <AutoComplete     
         popupClassName="certain-category-search-dropdown"
         popupMatchSelectWidth={500}
-        style={{width: 350,}}
+        style={{backgroundColor: '#f6d5da',width: 350,}}
         options={options}
         size="large"
       >
-        <Input.Search size="large" placeholder="input here" />
+        <Input.Search size="large" placeholder="input here" variant="borderless"/>
       </AutoComplete>
 
 

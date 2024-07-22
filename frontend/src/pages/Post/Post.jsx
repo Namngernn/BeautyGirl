@@ -67,9 +67,12 @@ const Post = () => {
     <div style={{backgroundColor: '#fdf3f3'}} className='h-screen'>
       {/* nav ด้านบน */}
       <div>
-        <nav className='p-4 shadow-sm shadow-black-100' style={{ backgroundColor: '#FFE6E6' }}>
-          <Button type="text" icon={<LeftOutlined className="text-gray-600" />} /> 
-          <span className="m-20 text-gray-600" >Post</span>
+        <nav className='p-4 flex items-center justify-between' style={{ backgroundColor: '#FFE6E6' }}>
+          <Button type="text" icon={<LeftOutlined className="text-gray-600" />} />
+          <div className="flex justify-center">
+            <span className="text-gray-600">Post</span>
+          </div>
+          <div className="w-10"></div>
         </nav>
       </div> 
 
