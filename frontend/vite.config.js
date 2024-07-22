@@ -7,11 +7,5 @@ import react from '@vitejs/plugin-react'
 // })
 
 export default defineConfig({
-  css: {
-    postcss: {
-      plugins: [
-        // ควรจะว่างเปล่า หรือระบุเฉพาะ plugins ที่คุณต้องการเพิ่มเติม
-      ]
-    }
-  }
+  plugins: [react()],
 })

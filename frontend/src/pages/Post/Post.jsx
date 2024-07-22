@@ -70,6 +70,7 @@ const Post = () => {
       {/* bar ด้านบน */}
       <div>
         <nav className='text-center w-full h-50 fixed top-0 left-0 flex items-center justify-center' style={{backgroundColor: "#f6d5da"}}>Post</nav>
+      
         <Button icon={<LeftOutlined />} style={{ position: 'absolute', left: 20 }}/> 
       </div>
 
@@ -121,6 +122,11 @@ const Post = () => {
             </Tag.CheckableTag>
           ))}
         </Flex>
+      </div>
+
+      {/* ปุ่มโพสต์ */}
+      <div>
+        <button className="item-center bg-pink300 text-white py-2 px-4 rounded">POST</button>
       </div>
 
     </div>
