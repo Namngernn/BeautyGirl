@@ -130,9 +130,7 @@ const Post = () => {
       <div className='pt-10 flex items-center justify-center'>
         <button className="item-center bg-pink300 text-white py-2 px-20 rounded">POST</button>
       </div>
-
     </div>
   ) 
 }
-
 export default Post
