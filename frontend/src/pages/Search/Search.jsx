@@ -54,17 +54,16 @@ const Search = () => {
         </nav>
       </div>
 
-      <AutoComplete     
-        popupClassName="certain-category-search-dropdown"
-        popupMatchSelectWidth={500}
-        style={{backgroundColor: '#f6d5da',width: 350,}}
-        options={options}
-        size="large"
-      >
-        <Input.Search size="large" placeholder="input here" variant="borderless"/>
-      </AutoComplete>
-
-
+      <div className="m-5 shadow-md rounded" style={{backgroundColor: '#fdf3f3'}}>
+        <div className="flex items-center border rounded-lg overflow-hidden">
+            <div className="px-2">
+                <span className="material-icons text-gray-400">search</span>
+            </div>
+            <input type="text" placeholder="Search here" className="flex-1 py-2 px-4 focus:outline-none"/>
+            <button className="px-4 py-2 text-white" style={{ backgroundColor: '#d75c77' }}>Search</button>
+        </div>
+    </div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
     </div>
   )
    
