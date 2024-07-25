@@ -21,33 +21,28 @@ const getActiveColors = (colors) =>
   colors.map((color) => new TinyColor(color).darken(5).toString());
 
 const Login = () => (
-  <div>
+  <div className=" min-h-screen p-4 " style={{backgroundColor: "#fdf3f3"}}>
+    {/* ปุ่มBack */}
     <Button
-      icon={<LeftOutlined />}
-      style={{ position: 'absolute', left: 20, }} />
+      type="text"
+      icon={<LeftOutlined className="text-gray-600" />}
+      className="self-start"
+    />
 
+    {/* icon social */}
     <div>
-      <div style={{ paddingTop: '20px' }}>
-        <h2 >Welcome Back!</h2>
-      </div>
-      <div className="text-center mb-6">
-      <div  style={{ paddingBottom: '10px', color: 'gray' }}>Beautygirl</div>
-        <div style={{ paddingbotttom: '20px' }}>
-          <Button
-            shape="circle"
-            icon={<FaFacebookF fill="#F2CAAE" />}
-          />
-          <Button
-            shape="circle"
-            icon={<FaGoogle fill="#F2CAAE" />}
-          />
-          <Button
-            shape="circle"
-            icon={<FaLinkedinIn fill="#F2CAAE" />}
-          />
+      <div className="text-center mb-10">
+        <h2 className="text-2xl font-bold text-black">Welcome Back!</h2>
+        <div className="text-gray-500 mb-4">Beautygirl</div>
+        <div className="flex justify-center space-x-4 mb-4">
+          <Button shape="circle" icon={<FaFacebookF fill="#F2CAAE" />} />
+          <Button shape="circle" icon={<FaGoogle fill="#F2CAAE" />} />
+          <Button shape="circle" icon={<FaLinkedinIn fill="#F2CAAE" />} />
         </div>
       </div>
-      <Form style={{ paddingTop: '20px' }}
+
+      {/* Form กรอก UserName/PW */}
+      <Form
         name="basic"
         initialValues={{
           remember: true,
@@ -55,8 +50,10 @@ const Login = () => (
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
-        className="space-y-4"
+         className="space-y-2 flex flex-col items-center"
       >
+
+        {/* UserName*/}
         <Form.Item
           name="username"
           rules={[
@@ -66,9 +63,12 @@ const Login = () => (
             },
           ]}
         >
-          <Input placeholder="UserName" className=" py-2 px-4 border border-gray-300 rounded" />
+          <Input placeholder="UserName" className="py-2 px-4 w-80 border border-gray-300 rounded" />
+
         </Form.Item>
 
+
+        {/* Password*/}
         <Form.Item
           name="password"
           rules={[
@@ -78,33 +78,35 @@ const Login = () => (
             },
           ]}
         >
-          <Input.Password placeholder="Password" className="py-2 px-4 border border-gray-300 rounded" />
+          <Input.Password placeholder="Password" className="py-2 px-4 w-80 border border-gray-300 rounded" />
         </Form.Item>
 
+
+        {/* ปุ่ม Sign In*/}
         <Form.Item>
-            <ConfigProvider
-              theme={{
-                components: {
-                  Button: {
-                    colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
-                    colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
-                    colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
-                    lineWidth: 0,
-                  },
+          <ConfigProvider
+            theme={{
+              components: {
+                Button: {
+                  colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
+                  colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
+                  colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
+                  lineWidth: 0,
                 },
-              }}
-            >
+              },
+            }}
+          >
+            <div className="flex justify-center mt-6">
               <Button
                 type="primary"
                 htmlType="submit"
-                block
-                className="bg-gradient-to-r from-pink-400 to-orange-300 border-none rounded"
-                style={{ borderRadius: '20px', height: '40px' }}
+                className="rounded-full h-12 w-64"
               >
                 Sign In
               </Button>
-            </ConfigProvider>
-          </Form.Item>
+            </div>
+          </ConfigProvider>
+        </Form.Item>
       </Form>
     </div>
   </div>

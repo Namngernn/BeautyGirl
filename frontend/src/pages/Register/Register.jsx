@@ -19,6 +19,7 @@ const getHoverColors = (colors) =>
 const getActiveColors = (colors) =>
   colors.map((color) => new TinyColor(color).darken(5).toString());
 
+
 const Register = () => (
   <div style={{padding: '20px', borderRadius: '10px', maxWidth: '400px', margin: 'auto' }}>
     <Button
