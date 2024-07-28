@@ -21,31 +21,24 @@ const getActiveColors = (colors) =>
 
 
 const Register = () => (
-  <div style={{padding: '20px', borderRadius: '10px', maxWidth: '400px', margin: 'auto' }}>
-    <Button
-      icon={<LeftOutlined />}
-      style={{ position: 'absolute', left: 20 }} 
+  <div className=" min-h-screen p-4 " style={{ backgroundColor: "#fdf3f3" }}>
+
+     {/* ปุ่มBack */}
+     <Button
+      type="text"
+      icon={<LeftOutlined className="text-gray-600" />}
+      className="self-start"
     />
 
+    {/* icon social */}
     <div>
-      <div style={{ paddingTop: '20px', textAlign: 'center' }}>
-        <h2>Welcome Back!</h2>
-      </div>
-      <div className="text-center mb-6">
-        <div style={{ paddingBottom: '10px', color: 'gray' }}>Beautygirl</div>
-        <div style={{ paddingbotttom: '20px' }}>
-          <Button
-            shape="circle"
-            icon={<FaFacebookF fill="#F2CAAE" />}
-          />
-          <Button
-            shape="circle"
-            icon={<FaGoogle fill="#F2CAAE" />}
-          />
-          <Button
-            shape="circle"
-            icon={<FaLinkedinIn fill="#F2CAAE" />}
-          />
+      <div className="text-center mb-10">
+        <h2 className="text-2xl font-bold text-black">Welcome Back!</h2>
+        <div className="text-gray-500 mb-4">Beautygirl</div>
+        <div className="flex justify-center space-x-4 mb-4">
+          <Button shape="circle" icon={<FaFacebookF fill="#F2CAAE" />} />
+          <Button shape="circle" icon={<FaGoogle fill="#F2CAAE" />} />
+          <Button shape="circle" icon={<FaLinkedinIn fill="#F2CAAE" />} />
         </div>
       </div>
       {/* <div className="text-left text-gray-500 mb-4">Create Account</div>  */}
@@ -120,6 +113,7 @@ const Register = () => (
             <Input placeholder="Age" className="py-2 px-4 border border-gray-300 rounded" />
           </Form.Item>
 
+          {/* ปุ่ม Sign In*/}
           <Form.Item>
             <ConfigProvider
               theme={{
@@ -133,15 +127,15 @@ const Register = () => (
                 },
               }}
             >
-              <Button
-                type="primary"
-                htmlType="submit"
-                block
-                className="bg-gradient-to-r from-pink-400 to-orange-300 border-none rounded"
-                style={{ borderRadius: '20px', height: '40px' }}
-              >
-                Sign Up
-              </Button>
+              <div className="flex justify-center mt-6">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="rounded-full h-12 w-64"
+                >
+                  Sign Up
+                </Button>
+              </div>
             </ConfigProvider>
           </Form.Item>
         </Form>

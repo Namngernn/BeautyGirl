@@ -42,44 +42,42 @@ const Login = () => (
       </div>
 
       {/* Form กรอก UserName/PW */}
-      <Form
-        name="basic"
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-         className="space-y-2 flex flex-col items-center"
-      >
-
-        {/* UserName*/}
-        <Form.Item
-          name="username"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your username!',
-            },
-          ]}
+      <Form style={{ paddingTop: '20px' }}
+          name="basic"
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+          className="space-y-4"
         >
-          <Input placeholder="UserName" className="py-2 px-4 w-80 border border-gray-300 rounded" />
+          <Form.Item
+            name="username"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your username!',
+              },
+            ]}
+          >
+            <Input placeholder="UserName" className=" py-2 px-4 border border-gray-300 rounded" />
+          </Form.Item>
 
-        </Form.Item>
 
 
         {/* Password*/}
         <Form.Item
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: 'Please input your password!',
-            },
-          ]}
-        >
-          <Input.Password placeholder="Password" className="py-2 px-4 w-80 border border-gray-300 rounded" />
-        </Form.Item>
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+          >
+            <Input.Password placeholder="Password" className="py-2 px-4 border border-gray-300 rounded" />
+          </Form.Item>
 
 
         {/* ปุ่ม Sign In*/}
