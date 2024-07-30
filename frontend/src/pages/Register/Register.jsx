@@ -42,6 +42,8 @@ const Register = () => (
         </div>
       </div>
       {/* <div className="text-left text-gray-500 mb-4">Create Account</div>  */}
+
+      {/* ช่องกรอกข้อมูล */}
       <div>
         <Form style={{ paddingTop: '20px' }}
           name="basic"
@@ -113,7 +115,7 @@ const Register = () => (
             <Input placeholder="Age" className="py-2 px-4 border border-gray-300 rounded" />
           </Form.Item>
 
-          {/* ปุ่ม Sign In*/}
+          {/* ปุ่ม Sign Up*/}
           <Form.Item>
             <ConfigProvider
               theme={{

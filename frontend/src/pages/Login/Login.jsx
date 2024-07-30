@@ -4,7 +4,6 @@ import { FaFacebookF, FaGoogle, FaLinkedinIn } from 'react-icons/fa';
 import { LeftOutlined } from '@ant-design/icons';
 import { TinyColor } from '@ctrl/tinycolor';
 
-
 const colors1 = ['#F3D2C3', '#F2BFCB'];
 
 const onFinish = (values) => {
@@ -20,10 +19,12 @@ const getHoverColors = (colors) =>
 const getActiveColors = (colors) =>
   colors.map((color) => new TinyColor(color).darken(5).toString());
 
-const Login = () => (
-  <div className=" min-h-screen p-4 " style={{backgroundColor: "#fdf3f3"}}>
-    {/* ปุ่มBack */}
-    <Button
+
+const Register = () => (
+  <div className=" min-h-screen p-4 " style={{ backgroundColor: "#fdf3f3" }}>
+
+     {/* ปุ่มBack */}
+     <Button
       type="text"
       icon={<LeftOutlined className="text-gray-600" />}
       className="self-start"
@@ -40,9 +41,9 @@ const Login = () => (
           <Button shape="circle" icon={<FaLinkedinIn fill="#F2CAAE" />} />
         </div>
       </div>
-
-      {/* Form กรอก UserName/PW */}
-      <Form style={{ paddingTop: '20px' }}
+      {/* <div className="text-left text-gray-500 mb-4">Create Account</div>  */}
+      <div>
+        <Form style={{ paddingTop: '20px' }}
           name="basic"
           initialValues={{
             remember: true,
@@ -64,10 +65,9 @@ const Login = () => (
             <Input placeholder="UserName" className=" py-2 px-4 border border-gray-300 rounded" />
           </Form.Item>
 
+          
 
-
-        {/* Password*/}
-        <Form.Item
+          <Form.Item
             name="password"
             rules={[
               {
@@ -79,35 +79,37 @@ const Login = () => (
             <Input.Password placeholder="Password" className="py-2 px-4 border border-gray-300 rounded" />
           </Form.Item>
 
+         
 
-        {/* ปุ่ม Sign In*/}
-        <Form.Item>
-          <ConfigProvider
-            theme={{
-              components: {
-                Button: {
-                  colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
-                  colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
-                  colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
-                  lineWidth: 0,
+          {/* ปุ่ม Sign In*/}
+          <Form.Item>
+            <ConfigProvider
+              theme={{
+                components: {
+                  Button: {
+                    colorPrimary: `linear-gradient(135deg, ${colors1.join(', ')})`,
+                    colorPrimaryHover: `linear-gradient(135deg, ${getHoverColors(colors1).join(', ')})`,
+                    colorPrimaryActive: `linear-gradient(135deg, ${getActiveColors(colors1).join(', ')})`,
+                    lineWidth: 0,
+                  },
                 },
-              },
-            }}
-          >
-            <div className="flex justify-center mt-6">
-              <Button
-                type="primary"
-                htmlType="submit"
-                className="rounded-full h-12 w-64"
-              >
-                Sign In
-              </Button>
-            </div>
-          </ConfigProvider>
-        </Form.Item>
-      </Form>
+              }}
+            >
+              <div className="flex justify-center mt-6">
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  className="rounded-full h-12 w-64"
+                >
+                  Sign In
+                </Button>
+              </div>
+            </ConfigProvider>
+          </Form.Item>
+        </Form>
+      </div>
     </div>
   </div>
 );
 
-export default Login;
+export default Register;

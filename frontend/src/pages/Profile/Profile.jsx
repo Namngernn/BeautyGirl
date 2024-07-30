@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Avatar, Button } from 'antd';
 import { SettingOutlined, AppstoreOutlined, BookOutlined, HeartOutlined, LeftOutlined } from '@ant-design/icons';
@@ -43,7 +42,6 @@ const Profile = () => {
             <p className="text-gray-500">Following</p>
           </div>
         </div>
-
         <Button className="mt-8 w-56 bg-white border-[#FFC1A4] text-black" type="primary">
           Edit Profile
         </Button>
@@ -62,15 +60,10 @@ const Profile = () => {
             icon={<HeartOutlined style={{ fontSize: '24px', color: '#472421' }} />}
           />
 
-        <Button className="mt-4 w-full" type="primary">Edit Profile</Button>
-        <div className="flex justify-around w-full mt-4">
-          <AppstoreOutlined className="text-2xl text-gray-500" />
-          {/* <BookmarkOutlined className="text-2xl text-gray-500" /> */}
-          <HeartOutlined className="text-2xl text-gray-500" />
+
         </div>
       </div>
     </div>
-  </div>  
   );
 };
 
